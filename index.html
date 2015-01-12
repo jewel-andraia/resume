@@ -233,6 +233,27 @@
 	#me-summary p {
 		text-align: center;
 	}
+
+	.float-list {
+		font-size: smaller;
+		list-style: circle;
+		padding: 0;
+		margin: 0;
+	}
+
+	.float-list:after {
+		content: ' ';
+		display: block;
+		clear: left;
+	}
+	.float-list li {
+		float: left;
+		margin: 0 1em;
+	}
+	.float-list li:first-child, .float-list li.break {
+		list-style: none;
+		clear: left;
+	}
 	</style>
 	<style type="text/css" media="print">
 
@@ -309,6 +330,38 @@
 	    	 extensive background in front-end and full-stack web development, mobile and desktop apps,
 	    	 and user experience enhancement. Andy's core motivation is to make computers and handheld devices more accessible to novices, power users, and everyone in between.
 	    	</p>
+	    </div>
+
+	    <h2>Areas of Expertise</h2>
+	    <div class="section">
+	    	<ul class="float-list">
+	    		<li>JavaScript</li>
+	    		<li>HTML / HTML5</li>
+	    		<li>CSS / CSS3</li>
+	    		<li>C#/.NET</li>
+	    		<li>T-SQL &amp; MySQL</li>
+
+	    		<li class="break">python</li>
+	    		<li>Django</li>
+	    		<li>node.js</li>
+	    		<li>PHP</li>
+	    		<li>Objective-C</li>
+	    		<li>iOS</li>
+	    		<li>Java</li>
+	    		<li>Android</li>
+	    		<li>BlackBerry</li>
+
+	    		<li class="break">Git / GitHub</li>
+	    		<li>perforce</li>
+	    		<li>Subversion</li>
+
+	    		<li>Information Technology</li>
+	    		<li>Networking</li>
+
+	    		<li class="break">Software &amp; Hardware Maintenance</li>
+	    		<li>Windows, Mac OS X, &amp; Linux</li>
+	    		<li>A/V &amp; Theatre Technology</li>
+	    	</ul>
 	    </div>
 	</div>
 
@@ -467,43 +520,6 @@
 					<li class="spacer">Study abroad programs in Spain, Chile, Peru, China, and London</li>
 			    </ul>
 			</div>
-	    </div>
-	</div>
-	<div class="area">
-	    <h2>Skills</h2>
-	    <div class="section">
-
-		    <h3>Web Development</h3>
-			<ul class="details">
-				<li>JavaScript, HTML/CSS, <span class="hidden">HTML5, CSS3,</span> C#/.NET, PHP, Java, T-SQL, MySQL</li>
-				<li>Desktop browsers: Chrome, Firefox, Internet Explorer, Safari, Opera</li>
-				<li>Mobile browsers (phones and tablets): Android, iOS, BlackBerry</li>
-				<li>Source control: Git/<a href="http://github.com/andytuba">GitHub</a>, Perforce, Subversion
-		    </ul>
-		</div>
-	    <div class="section">
-	    	<h3>Information Technology</h3>
-		    <ul>
-				<li>Computer maintenance (networking, operating systems, software, hardware)</li>
-				<li>Windows, Mac OS X, Linux (Ubuntu/Debian, Fedora)</li>
-		    </ul>
-	    </div>
-	    <div class="section">
-	    	<h3>A/V and Theatre Technology</h3>
-		    <ul>
-				<li>Installing and operating lights and sound
-				equipment for live shows</li>
-				<li>Recording and remastering live events and performances</li>
-				<li>Installing and maintaining speakers, projectors, VHS/DVD players, and other electronics</li>
-		    </ul>
-	    </div>
-	    <div class="section">
-	    	<h3>Foreign Languages</h3>
-
-	    	<ul>
-		    	<li>Spanish (proficient in reading, writing, speaking)</li>
-		    	<li>Mandarin Chinese (minor proficiency in reading)</li>
-		    </ul>
 	    </div>
 	</div>
 </div>
