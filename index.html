@@ -149,7 +149,7 @@
 	    /*margin: 150px auto 0;*/
 	    margin: 0 auto;
 	    padding-bottom: 20px;
-	    min-width: 400px;
+	    min-width: 300px;
 	    max-width: 800px;
 	    font-family:  Palatino, 'Times New Roman', serif;
 	    line-height: 1.3em;
@@ -235,8 +235,7 @@
 	}
 
 	.float-list {
-		font-size: smaller;
-		list-style: circle;
+		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
@@ -248,11 +247,31 @@
 	}
 	.float-list li {
 		float: left;
-		margin: 0 1em;
+		margin: 0 0 0 1em;
 	}
-	.float-list li:first-child, .float-list li.break {
-		list-style: none;
-		clear: left;
+	.float-list li:before {
+		content: '\b7';
+		margin-right: 1em;
+	}
+	.float-list li:first-child:before {
+		content: none;
+	}
+	@media only screen and (min-width: 500px) {
+		.float-list li.break {
+			clear: left;
+		}
+		.float-list li.break:before {
+			content: none;
+		}
+	}
+
+	@media only screen and (max-width : 500px) {
+		.float-list li.mini-break {
+			clear: left;
+		}
+		.float-list li.mini-break:before {
+			content: none;
+		}
 	}
 	</style>
 	<style type="text/css" media="print">
@@ -338,27 +357,27 @@
 	    		<li>JavaScript</li>
 	    		<li>HTML / HTML5</li>
 	    		<li>CSS / CSS3</li>
-	    		<li>C#/.NET</li>
+	    		<li class="mini-break">C#/.NET</li>
 	    		<li>T-SQL &amp; MySQL</li>
 
 	    		<li class="break">python</li>
 	    		<li>Django</li>
 	    		<li>node.js</li>
 	    		<li>PHP</li>
-	    		<li>Objective-C</li>
+	    		<li class="mini-break">Objective-C</li>
 	    		<li>iOS</li>
 	    		<li>Java</li>
 	    		<li>Android</li>
 	    		<li>BlackBerry</li>
 
-	    		<li class="break">Git / GitHub</li>
+	    		<li class="break mini-break">Git / GitHub</li>
 	    		<li>perforce</li>
 	    		<li>Subversion</li>
 
-	    		<li>Information Technology</li>
+	    		<li class="mini-break">Information Technology</li>
 	    		<li>Networking</li>
 
-	    		<li class="break">Software &amp; Hardware Maintenance</li>
+	    		<li class="break mini-break">Software &amp; Hardware Maintenance</li>
 	    		<li>Windows, Mac OS X, &amp; Linux</li>
 	    		<li>A/V &amp; Theatre Technology</li>
 	    	</ul>
