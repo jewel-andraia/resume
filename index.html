@@ -41,7 +41,7 @@
       display: none;
     }
 
-    .head {
+    #head {
       /*
 	    position: fixed;
 	    z-index: 1;
@@ -57,8 +57,8 @@
       font-family: Optima, 'Lucida Grande', 'Lucida', Verdana, Tahoma, sans-serif;
     }
 
-    .head,
-    .head a {
+    #head,
+    #head a {
       color: #999;
     }
 
@@ -138,7 +138,7 @@
       max-width: 800px;
     }
 
-    .head h1 {
+    #head h1 {
       margin: 0;
       border: 0;
       padding: 0;
@@ -178,16 +178,20 @@
       font-size: 1.7em;
     }
 
-    ul.area>ul {
+    section>ul>li {
+      page-break-inside: avoid;
+    }
+
+    section>ul {
       list-style: none;
     }
-    
-    ul.area>ul>li {
+
+    section>ul>li {
       margin: 0 0 0 2em;
       line-height: 1.4em;
     }
 
-    ul.area>ul>li+li {
+    section>ul>li+li {
       margin-top: 1em;
     }
 
@@ -250,22 +254,12 @@
       list-style: disc;
     }
 
-    .detail_title {
-      font-size: larger;
-    }
-
-    #me-summary .section {
-      margin: 0;
-    }
-
-    #me-summary p {
+    #about-me p {
       text-align: justify;
     }
 
     .float-list {
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
 
     .float-list:after {
@@ -276,12 +270,12 @@
 
     .float-list li {
       float: left;
-      margin: 0 0 0 1em;
+      margin: 0 0 0 0.7em;
     }
 
     .float-list li:before {
       content: '\b7';
-      margin-right: 1em;
+      margin-right: 0.7em;
     }
 
     .float-list li:first-child:before {
@@ -307,9 +301,15 @@
         content: none;
       }
     }
+
+    @media (max-width: 1000px) {
+      #body {
+        margin: 0 1em;
+      }
+    }
   </style>
   <style type="text/css" media="print">
-    .head {
+    #head {
       background: white;
       color: black;
       border-bottom: 1px #ddd solid;
@@ -322,7 +322,7 @@
       padding: 0 10px;
     }
 
-    .head h1 {
+    #head h1 {
       font-size: 40px;
     }
 
@@ -340,15 +340,22 @@
       padding-bottom: 0;
     }
 
-    .newpage {
-      page-break-before: always;
-      padding-top: 5em;
+    .float-list abbr[title] {
+      text-decoration-line: none;
+    }
+
+    .float-list abbr[title]:after {
+      content: ': 'attr(title);
+    }
+
+    .float-list.mini-break {
+      clear: left;
     }
   </style>
 </head>
 
 <body>
-  <div class="head">
+  <div id="head">
     <div class="buttons">
       <a id="print" href="javascript:void(0);" onclick="print();">
         Print
@@ -363,11 +370,11 @@
         <a href="mailto:andytuba@andytuba.com">andytuba@andytuba.com</a>
         <br> (267) 888-6172
       </div>
-      <h1>Andy Sacher (they/he)</h1>
+      <h1>Andy Sacher <small>(they/he)</small></h1>
     </div>
   </div>
   <div id="body">
-    <div class="area" id="me-summary">
+    <section id="me">
       <h2>Senior Full-Stack Software Engineer</h2>
       <p>
         Andy (they/he) is a talented, versatile software engineering professional with a proven ability to
@@ -376,9 +383,288 @@
         Andy's core motivation is to make tech more accessible to novices, power users, and folks who want
         to make their own tech-powered creations.
       </p>
-    </div>
-    <h2>Areas of Expertise</h2>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <h3>
+            <a href="https://www.reddit.com/">Reddit</a>
+          </h3>
+          <div class="location">San Francisco, CA
+          </div>
+          <div class="date">2016 - present</div>
+          <div class="subsection">
+            <h4>Staff Software Engineer</h4>
+            <p>Reddit, a community forum platform, is the "frontpage of the internet" where folks find their
+              people to discuss news, life, and cat pics.</p>
+            <ul class="details">
+              <li>Founding member of desktop web redesign experimental development team</li>
+              <li>Founding member of chat web and API architecture and implementation</li>
+              <li>Architected and implemented admin and user tooling to support
+                Community Operations, Anti-Evil (n&eacute;e Trust and Safety) Operations, and Legal
+                Operations</li>
+              <li>Architected and oversaw implementation to incorporate admin tooling into the redesign website
+              </li>
+              <li>Member of Architects Guild, coalition of senior IC engineers reporting to CTO</li>
+              <li>Mentor and interviewer for junior and peered software engineers within the company</li>
+              <li>Liaison to community developers of third-party browser extensions and apps</li>
+              <li>Founding member of LGBTQ Employee Resource Group and co-organizer for SF Pride 2018 and
+                2019 contingents</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="https://imgur.com/">Imgur</a>
+          </h3>
+          <div class="location">San Francisco, CA</div>
+          <div class="date">2015 - 2016</div>
+          <div class="subsection">
+            <h4>Automated QA Engineer, Full-Stack Engineer</h4>
+            <p>Imgur, a public community and private image host, surfaces up the most awesome images on the
+              internet. Serving 5.5 billion page views and 175 million unique sets of eyeballs monthly,
+              Imgur provides massive amounts of cat pics, Twitter screencaps, and worldwide community at
+              scale.</p>
+            <p>As a Full-Stack Engineer, Andy maintains the website, API, and infrastructure, adding and
+              maintaining functionality to support community, revenue, and data analytics. As a QA
+              Automation Engineer, Andy built and maintains the testing framework and test suites for the
+              desktop website while providing support for and managing contributions from fellow
+              engineers.</p>
+            <ul class="details">
+              <li>Developed and maintained functionality for imgur.com desktop website, mobile website,
+                API, and backend infrastructure.</li>
+              <li>Developed functionality to support community, email engagement, and data analysis
+                initiatives.</li>
+              <li>Built integration testing for desktop website in Selenium/python.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="https://www.gigya.com/">Gigya</a>
+          </h3>
+          <div class="location">
+            <a
+              href="https://www.google.com/maps/place/Gigya/@37.421086,-122.098501,17z/data=!3m1!4b1!4m2!3m1!1s0x808fbb2516173e1f:0x8a297ffafd024cc7">Mountain
+              View, CA</a>
+          </div>
+          <div class="date">2014 - 2015</div>
+          <div class="subsection">
+            <h4>Front-End Web Developer, Creative/Interactive</h4>
+            <p>Gigya's Customer Identity Management Platform allows companies to build rich user profiles
+              from social media accounts, aiding customer engagement and promoting customer loyalty.</p>
+            <p>As the Senior Developer for the Creative/Interactive team, Andy maintained and improved
+              Gigya's WordPress homepage, striving to provide the best possible customer experience. He
+              also helped out with the sales and marketing departments, streamlining their processes and
+              helping them to better connect with prospective and existing clients.
+            </p>
+            <ul class="details">
+              <li>Developed and maintained Gigya's WordPress homepage, including a custom theme and
+                third-party plugins. Streamline and implement content and layout updates to improve
+                customer experience.</li>
+              <li>Selected from existing tools or develop new applications to streamline internal sales
+                and marketing workflows, enhancing Gigya's ability to build and maintain customer and
+                partner relationships.</li>
+              <li>Assisted the sales and marketing departments with special projects as requested.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="https://www.sonicfoundry.com/">Sonic Foundry</a>
+          </h3>
+          <div class="location">
+            <a
+              href="http://maps.google.com/maps?q=Sonic+Foundry,+Madison,+WI&amp;ll=43.073002,-89.386761&amp;spn=0.005361,0.012789">Madison,
+              WI</a>
+          </div>
+          <div class="date">2011 - 2014</div>
+          <div class="subsection">
+            <h4>Software Design Engineer</h4>
+            <p>Sonic Foundry is an enterprise web application solution for streaming video and
+              presentations. It provides live and on-demand video playback for events, lectures, podcasts,
+              webinars, and other applications.</p>
+            <p>Andy's role as a Software Design Engineer included designing elements of the user interface,
+              building new features, and fixing bugs. He provided continuous platform support for a wide
+              variety of devices and browsers, and also enabled customization and integration into other
+              web applications using JavaScript API.</p>
+            <ul class="details">
+              <li>Designed new user interface elements, developed new functionality, and fixed bugs to
+                give end-users the best possible viewing experience.</li>
+              <li>Provided continuous platform support to maintain usability across all supported devices
+                and browsers.</li>
+              <li>Developed a JavaScript API to enable customers to customize the player's look and feel,
+                and integrate it into other web applications, such as online education portals, blogs,
+                and other Mediasite applications.</li>
+              <li>Developed a native iOS app to enable iPhone video playback support and improve user
+                engagement.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="https://redditenhancementsuite.com/">Reddit Enhancement Suite</a>
+          </h3>
+          <div class="location">Volunteer / Open Source</div>
+          <div class="date">2012 - Present</div>
+          <div class="subsection">
+            <h4>Senior JavaScript/CSS Developer</h4>
+            <p>Reddit Enhancement Suite is a popular, open-source, cross-browser web extension which adds
+              extra functionality to reddit.com. This includes style adjustments, custom themes, embedded
+              external content, filters, and a slew of other features.</p>
+            <p>Andy has taken a leadership role in reviewing and implementing JavaScript and CSS for Reddit
+              Enhancement Suite. He's fixed bugs, updated code to accommodate changes to browsers and
+              Reddit.com, and provided direct support to end-users. His pet projects include search
+              functionality for RES settings and features, core infrastructure, Bitcoin Tip functionality,
+              and smaller improvements to improve overall usability.</p>
+            <ul class="details">
+              <li>Take a leadership role in review and implementation of JavaScript and CSS code.</li>
+              <li>Fix bugs and update code to maintain browser compatibility and support changes to
+                reddit.com and external sites like imgur.com.</li>
+              <li>Provide direct end-user support to maintain and expand a devoted, enthusiastic user
+                base.</li>
+              <li>Manage change log and release notices to maintain a streamlined project infrastructure.
+              </li>
+              <li>Integrate new features including the ability to search for RES settings and features,
+                Bitcoin Tip functionality, and minor improvements to the browser extension overall.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="http://www.shuttercal.com/">ShutterCal</a>
+          </h3>
+          <div class="location">Volunteer / Sandbox</div>
+          <div class="date">2009 - 2015</div>
+          <div class="subsection">
+            <h4>Front-End Developer</h4>
+            <p>ShutterCal is a daily photo journal that combines digital photos and text to create a unique,
+              tangible record of your daily life.</p>
+            <p>Andy has engaged with this project for several years out of a personal devotion to the
+              project's core concept. He's responsible for building all front-end functionality,
+              integrating third-party functionality, and providing tools and leadership for junior
+              developers.</p>
+            <ul class="details">
+              <li>Assist in designing and building the overall product and new features. Use JavaScript,
+                CSS, SASS/Compass, Python, and Django to develop all front-end website functionality to
+                promote an excellent user experience.</li>
+              <li>Integrate third-party functionality to maintain seamless accessibility.</li>
+              <li>Develop tools for and provide leadership and mentorship to junior developers.</li>
+              <li>Implement important new functionality, including an image lightbox viewer, Stripe
+                checkout integration, customization widgets, and an iPhoto export plugin.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="http://www.epic.com/">Epic Systems</a>
+          </h3>
+          <div class="location">
+            <a
+              href="http://maps.google.com/maps?q=Epic+Systems,+Verona,+WI&amp;sll=42.989641,-89.565154&amp;sspn=0.012823,0.023217&amp;z=17">Verona,
+              WI</a>
+          </div>
+          <div class="date">2010 - 2011</div>
+          <div class="subsection">
+            <h4>Software / Web Developer</h4>
+            <p>Epic Systems produces software to manage electronic medical records and provide access to
+              data within hospitals and directly to patients.</p>
+            <p>At Epic, Andy collaborated with a small team to maintain the corporate intranet home page, an
+              employee and customer directory, interactive maps and forms, and other essential internal
+              tools. He also worked with a graphic designer to create and implement themes to drive user
+              engagement.</p>
+            <ul class="details">
+              <li>Developed and implemented new technology for a variety of essential internal tools,
+                including a corporate intranet site, an employee and customer directory, site maps, and
+                HR forms.</li>
+              <li>Maintained rich search functionality, pulling from data sources including T-SQL and
+                Cach&eacute; databases to provide complete and accurate information for internal use.
+              </li>
+              <li>Collaborated with graphic designer to create and implement themes to improve user
+                engagement.</li>
+            </ul>
+          </div>
+          </ki>
+        <li>
+          <h3>
+            <a href="http://www.netguava.com/">Netguava</a>
+          </h3>
+          <div class="location">
+            <a
+              href="http://maps.google.com/maps?q=netguava,+chico,+ca&amp;hl=en&amp;sll=42.994483,-89.565481&amp;sspn=0.006411,0.011609&amp;z=15&amp;iwloc=A">Chico,
+              CA</a>
+          </div>
+          <div class="date">2010</div>
+          <div class="subsection">
+            <h4>Web Developer</h4>
+            <p>Netguava is a web development company that provides website development and hosting for
+              business, personal, and real estate.</p>
+            <p>At Netguava, Andy converted graphic design mockups into fully-functional website templates.
+              He also maintained websites for specific clients using Netguava's content management system.
+            </p>
+            <ul class="details">
+              <li>Collaborated with graphic design team to convert graphic design mockups into
+                fully-functional website templates for business use.</li>
+              <li>Supported and maintained websites for corporate clients after implementation to ensure
+                client and end-user satisfaction.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="http://www.dharmapublishing.com/">Dharma Publishing</a>
+          </h3>
+          <div class="location">Cazadero, CA</div>
+          <div class="date">2009 - 2010</div>
+          <div class="subsection">
+            <h4>Shipping Manager, Webmaster</h4>
+            <p>Dharma Publishing is a non-profit, volunteer-run distributor of Tibetan Buddhist texts and
+              artwork.</p>
+            <p>At Dharma Publishing, Andy packaged and shipped merchandise, coordinated warehouse
+              operations, and provided customer service via telephone. As their webmaster, he maintained
+              their online store, maintained customer databases, and developed new web features to drive
+              customer engagement and promote repeat business.</p>
+            <ul class="details">
+              <li>Maintained the company's website and online store, driving customer engagement and
+                promoting repeat business. Entered customer data and maintained company databases.</li>
+              <li>Packaged and sent books and artwork to businesses and individuals located worldwide.
+              </li>
+              <li>Managed warehouse and shipping supply inventory and provided customer support via
+                telephone, email, and storefront websites.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <h3>
+            <a href="http://www.udel.edu/">University of Delaware</a>
+          </h3>
+          <div class="location">
+            <a href="http://maps.google.com/maps?q=university+of+delaware&cid=0,0,13848285473888854897">Newark,
+              DE</a>
+          </div>
+          <div class="date">2003 - 2009</div>
+          <p>During his time at the University of Delaware, Andy worked in a variety of positions including Theatrical
+            Technician, Sound Intern, A/V Technician, Webmaster, Programmer, IT Assistant, Teacher's Assistant, and
+            Tutor.</p>
+        </li>
+        <li>
+          <h3>
+            <a href="http://www.wtfestival.org/">Williamstown Theatre Festival</a>
+          </h3>
+          <div class="location">Williams, MA</div>
+          <div class="date">2007</div>
+          <div class="subsection">
+            <h4>Sound Intern</h4>
+            <ul class="details">
+              <li>Install, maintain, and run theatrical sound equipment for rehearsals and shows</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
     <section id="expertise">
+      <h2>Preferred Technologies</h2>
       <ul class="float-list">
         <li>
           <abbr title="ES5, ES6, modern JavaScript">JavaScript</abbr>
@@ -387,335 +673,58 @@
         <li>
           <abbr title="LESS, SASS, SCSS, CSS-in-JS">CSS</abbr>
         </li>
-        <li class="mini-break">node.js</li>
-        <li>npm</li>
-        <li>yarn</li>
-        <li>gulp</li>
-        <li class="break mini-break">React</li>
-        <li>Redux</li>
-        <li>Backbone</li>
-        <li>jQuery</li>
-        <li class="mini-break">Django</li>
-        <li>
+        <li class="mini-break">
           <abbr title="py2.7, py3">python</abbr>
         </li>
         <li>
           <abbr title="php5, php7">php</abbr>
         </li>
-        <li>C#/.NET</li>
+        <li>C#</li>
+        <li>Objective-C</li>
+        <li>Java</li>
+
+        <li class="break mini-break">TypeScript</li>
+        <li>React</li>
+        <li>Redux</li>
+        <li>Backbone</li>
+        <li>jQuery</li>
+        <li>Django</li>
+
         <li class="break mini-break">Postgres</li>
         <li>MySQL</li>
         <li>NoSQL</li>
         <li>T-SQL</li>
-        <li class="mini-break">Objective-C</li>
-        <li>Java</li>
-        <li>iOS</li>
-        <li>Android</li>
+
+        <li class="mini-break">npm</li>
+        <li>yarn</li>
+        <li>gulp</li>
+
         <li class="break mini-break">Git / GitHub</li>
         <li>perforce</li>
         <li>svn</li>
-        <li class="mini-break">Windows, OS X, Linux</li>
+        <li class="mini-break">OS X, Linux, Windows</li>
         <li>A/V Technology</li>
       </ul>
     </section>
-  </div>
-  <div class="area">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <h3>
-          <a href="https://www.reddit.com/">Reddit</a>
-        </h3>
-        <div class="location">San Francisco, CA
-        </div>
-        <div class="date">2016 - present</div>
-        <div class="subsection">
-          <h4>Staff Software Engineer</h4>
-          <p>Reddit, a community forum platform, is the "frontpage of the internet" where folks find their
-            people to discuss news, life, and cat pics.</p>
-          <ul class="details">
-            <li>Founding member of desktop web redesign experimental development team</li>
-            <li>Founding member of chat web and API architecture and implementation</li>
-            <li>Architected and implemented admin and user tooling to support
-              Community Operations, Anti-Evil (n&eacute;e Trust and Safety) Operations, and Legal
-              Operations</li>
-            <li>Architected and oversaw implementation to incorporate admin tooling into the redesign website
-            </li>
-            <li>Member of Architects Guild, coalition of senior IC engineers reporting to CTO</li>
-            <li>Mentor and interviewer for junior and peered software engineers within the company</li>
-            <li>Liaison to community developers of third-party browser extensions and apps</li>
-            <li>Founding member of LGBTQ Employee Resource Group and co-organizer for SF Pride 2018 and
-              2019 contingents</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="https://imgur.com/">Imgur</a>
-        </h3>
-        <div class="location">San Francisco, CA</div>
-        <div class="date">2015 - 2016</div>
-        <div class="subsection">
-          <h4>Automated QA Engineer, Full-Stack Engineer</h4>
-          <p>Imgur, a public community and private image host, surfaces up the most awesome images on the
-            internet. Serving 5.5 billion page views and 175 million unique sets of eyeballs monthly,
-            Imgur provides massive amounts of cat pics, Twitter screencaps, and worldwide community at
-            scale.</p>
-          <p>As a Full-Stack Engineer, Andy maintains the website, API, and infrastructure, adding and
-            maintaining functionality to support community, revenue, and data analytics. As a QA
-            Automation Engineer, Andy built and maintains the testing framework and test suites for the
-            desktop website while providing support for and managing contributions from fellow
-            engineers.</p>
-          <ul class="details">
-            <li>Developed and maintained functionality for imgur.com desktop website, mobile website,
-              API, and backend infrastructure.</li>
-            <li>Developed functionality to support community, email engagement, and data analysis
-              initiatives.</li>
-            <li>Built integration testing for desktop website in Selenium/python.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="https://www.gigya.com/">Gigya</a>
-        </h3>
-        <div class="location">
-          <a
-            href="https://www.google.com/maps/place/Gigya/@37.421086,-122.098501,17z/data=!3m1!4b1!4m2!3m1!1s0x808fbb2516173e1f:0x8a297ffafd024cc7">Mountain
-            View, CA</a>
-        </div>
-        <div class="date">2014 - 2015</div>
-        <div class="subsection">
-          <h4>Front-End Web Developer, Creative/Interactive</h4>
-          <p>Gigya's Customer Identity Management Platform allows companies to build rich user profiles
-            from social media accounts, aiding customer engagement and promoting customer loyalty.</p>
-          <p>As the Senior Developer for the Creative/Interactive team, Andy maintained and improved
-            Gigya's WordPress homepage, striving to provide the best possible customer experience. He
-            also helped out with the sales and marketing departments, streamlining their processes and
-            helping them to better connect with prospective and existing clients.
-          </p>
-          <ul class="details">
-            <li>Developed and maintained Gigya's WordPress homepage, including a custom theme and
-              third-party plugins. Streamline and implement content and layout updates to improve
-              customer experience.</li>
-            <li>Selected from existing tools or develop new applications to streamline internal sales
-              and marketing workflows, enhancing Gigya's ability to build and maintain customer and
-              partner relationships.</li>
-            <li>Assisted the sales and marketing departments with special projects as requested.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="https://www.sonicfoundry.com/">Sonic Foundry</a>
-        </h3>
-        <div class="location">
-          <a
-            href="http://maps.google.com/maps?q=Sonic+Foundry,+Madison,+WI&amp;ll=43.073002,-89.386761&amp;spn=0.005361,0.012789">Madison,
-            WI</a>
-        </div>
-        <div class="date">2011 - 2014</div>
-        <div class="subsection">
-          <h4>Software Design Engineer</h4>
-          <p>Sonic Foundry is an enterprise web application solution for streaming video and
-            presentations. It provides live and on-demand video playback for events, lectures, podcasts,
-            webinars, and other applications.</p>
-          <p>Andy's role as a Software Design Engineer included designing elements of the user interface,
-            building new features, and fixing bugs. He provided continuous platform support for a wide
-            variety of devices and browsers, and also enabled customization and integration into other
-            web applications using JavaScript API.</p>
-          <ul class="details">
-            <li>Designed new user interface elements, developed new functionality, and fixed bugs to
-              give end-users the best possible viewing experience.</li>
-            <li>Provided continuous platform support to maintain usability across all supported devices
-              and browsers.</li>
-            <li>Developed a JavaScript API to enable customers to customize the player's look and feel,
-              and integrate it into other web applications, such as online education portals, blogs,
-              and other Mediasite applications.</li>
-            <li>Developed a native iOS app to enable iPhone video playback support and improve user
-              engagement.</li>
-          </ul>
-        </div>
-      </li>
-      <li class="newpage">
-        <h3>
-          <a href="https://redditenhancementsuite.com/">Reddit Enhancement Suite</a>
-        </h3>
-        <div class="location">Volunteer / Open Source</div>
-        <div class="date">2012 - Present</div>
-        <div class="subsection">
-          <h4>Senior JavaScript/CSS Developer</h4>
-          <p>Reddit Enhancement Suite is a popular, open-source, cross-browser web extension which adds
-            extra functionality to reddit.com. This includes style adjustments, custom themes, embedded
-            external content, filters, and a slew of other features.</p>
-          <p>Andy has taken a leadership role in reviewing and implementing JavaScript and CSS for Reddit
-            Enhancement Suite. He's fixed bugs, updated code to accommodate changes to browsers and
-            Reddit.com, and provided direct support to end-users. His pet projects include search
-            functionality for RES settings and features, core infrastructure, Bitcoin Tip functionality,
-            and smaller improvements to improve overall usability.</p>
-          <ul class="details">
-            <li>Take a leadership role in review and implementation of JavaScript and CSS code.</li>
-            <li>Fix bugs and update code to maintain browser compatibility and support changes to
-              reddit.com and external sites like imgur.com.</li>
-            <li>Provide direct end-user support to maintain and expand a devoted, enthusiastic user
-              base.</li>
-            <li>Manage change log and release notices to maintain a streamlined project infrastructure.
-            </li>
-            <li>Integrate new features including the ability to search for RES settings and features,
-              Bitcoin Tip functionality, and minor improvements to the browser extension overall.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="http://www.shuttercal.com/">ShutterCal</a>
-        </h3>
-        <div class="location">Volunteer / Sandbox</div>
-        <div class="date">2009 - 2015</div>
-        <div class="subsection">
-          <h4>Front-End Developer</h4>
-          <p>ShutterCal is a daily photo journal that combines digital photos and text to create a unique,
-            tangible record of your daily life.</p>
-          <p>Andy has engaged with this project for several years out of a personal devotion to the
-            project's core concept. He's responsible for building all front-end functionality,
-            integrating third-party functionality, and providing tools and leadership for junior
-            developers.</p>
-          <ul class="details">
-            <li>Assist in designing and building the overall product and new features. Use JavaScript,
-              CSS, SASS/Compass, Python, and Django to develop all front-end website functionality to
-              promote an excellent user experience.</li>
-            <li>Integrate third-party functionality to maintain seamless accessibility.</li>
-            <li>Develop tools for and provide leadership and mentorship to junior developers.</li>
-            <li>Implement important new functionality, including an image lightbox viewer, Stripe
-              checkout integration, customization widgets, and an iPhoto export plugin.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="http://www.epic.com/">Epic Systems</a>
-        </h3>
-        <div class="location">
-          <a
-            href="http://maps.google.com/maps?q=Epic+Systems,+Verona,+WI&amp;sll=42.989641,-89.565154&amp;sspn=0.012823,0.023217&amp;z=17">Verona,
-            WI</a>
-        </div>
-        <div class="date">2010 - 2011</div>
-        <div class="subsection">
-          <h4>Software / Web Developer</h4>
-          <p>Epic Systems produces software to manage electronic medical records and provide access to
-            data within hospitals and directly to patients.</p>
-          <p>At Epic, Andy collaborated with a small team to maintain the corporate intranet home page, an
-            employee and customer directory, interactive maps and forms, and other essential internal
-            tools. He also worked with a graphic designer to create and implement themes to drive user
-            engagement.</p>
-          <ul class="details">
-            <li>Developed and implemented new technology for a variety of essential internal tools,
-              including a corporate intranet site, an employee and customer directory, site maps, and
-              HR forms.</li>
-            <li>Maintained rich search functionality, pulling from data sources including T-SQL and
-              Cach&eacute; databases to provide complete and accurate information for internal use.
-            </li>
-            <li>Collaborated with graphic designer to create and implement themes to improve user
-              engagement.</li>
-          </ul>
-        </div>
-        </ki>
-      <li class="newpage">
-        <h3>
-          <a href="http://www.netguava.com/">Netguava</a>
-        </h3>
-        <div class="location">
-          <a
-            href="http://maps.google.com/maps?q=netguava,+chico,+ca&amp;hl=en&amp;sll=42.994483,-89.565481&amp;sspn=0.006411,0.011609&amp;z=15&amp;iwloc=A">Chico,
-            CA</a>
-        </div>
-        <div class="date">2010</div>
-        <div class="subsection">
-          <h4>Web Developer</h4>
-          <p>Netguava is a web development company that provides website development and hosting for
-            business, personal, and real estate.</p>
-          <p>At Netguava, Andy converted graphic design mockups into fully-functional website templates.
-            He also maintained websites for specific clients using Netguava's content management system.
-          </p>
-          <ul class="details">
-            <li>Collaborated with graphic design team to convert graphic design mockups into
-              fully-functional website templates for business use.</li>
-            <li>Supported and maintained websites for corporate clients after implementation to ensure
-              client and end-user satisfaction.</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <h3>
-          <a href="http://www.dharmapublishing.com/">Dharma Publishing</a>
-        </h3>
-        <div class="location">Cazadero, CA</div>
-        <div class="date">2009 - 2010</div>
-        <div class="subsection">
-          <h4>Shipping Manager, Webmaster</h4>
-          <p>Dharma Publishing is a non-profit, volunteer-run distributor of Tibetan Buddhist texts and
-            artwork.</p>
-          <p>At Dharma Publishing, Andy packaged and shipped merchandise, coordinated warehouse
-            operations, and provided customer service via telephone. As their webmaster, he maintained
-            their online store, maintained customer databases, and developed new web features to drive
-            customer engagement and promote repeat business.</p>
-          <ul class="details">
-            <li>Maintained the company's website and online store, driving customer engagement and
-              promoting repeat business. Entered customer data and maintained company databases.</li>
-            <li>Packaged and sent books and artwork to businesses and individuals located worldwide.
-            </li>
-            <li>Managed warehouse and shipping supply inventory and provided customer support via
-              telephone, email, and storefront websites.</li>
-          </ul>
-        </div>
-  </div>
-  <li>
-    <h3>
-      <a href="http://www.udel.edu/">University of Delaware</a>
-    </h3>
-    <div class="location">
-      <a href="http://maps.google.com/maps?q=university+of+delaware&cid=0,0,13848285473888854897">Newark,
-        DE</a>
-    </div>
-    <div class="date">2003 - 2009</div>
-    <p>During his time at the University of Delaware, Andy worked in a variety of positions including Theatrical
-      Technician, Sound Intern, A/V Technician, Webmaster, Programmer, IT Assistant, Teacher's Assistant, and
-      Tutor.</p>
-  </li>
-  <li>
-    <h3>
-      <a href="http://www.wtfestival.org/">Williamstown Theatre Festival</a>
-    </h3>
-    <div class="location">Williams, MA</div>
-    <div class="date">2007</div>
-    <div class="subsection">
-      <h4>Sound Intern</h4>
-      <ul class="details">
-        <li>Install, maintain, and run theatrical sound equipment for rehearsals and shows</li>
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <h3>University of Delaware</h3>
+          <div class="location">Newark, DE</div>
+          <div class="date">2004 - 2009</div>
+          <div class="subsection">
+            <h4>Bachelor of Arts</h4>
+            <ul class="details">
+              <li>Majors: Computer Science, Theatre Production</li>
+              <li>Minor: Spanish Studies</li>
+              <li>GPA: 3.314 / 4.000</li>
+              <li class="spacer">Study abroad programs in Spain, Chile, Peru, China, and London</li>
+            </ul>
+          </div>
+        </li>
       </ul>
-    </div>
-  </li>
-  </ul>
-  </div>
-  <div class="area">
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <h3>University of Delaware</h3>
-        <div class="location">Newark, DE</div>
-        <div class="date">2004 - 2009</div>
-        <div class="subsection">
-          <h4>Bachelor of Arts</h4>
-          <ul class="details">
-            <li>Majors: Computer Science, Theatre Production</li>
-            <li>Minor: Spanish Studies</li>
-            <li>GPA: 3.314 / 4.000</li>
-            <li class="spacer">Study abroad programs in Spain, Chile, Peru, China, and London</li>
-          </ul>
-        </div>
-      </li>
-    </ul>
+    </section>
   </div>
   <style>
     .badge.github {
