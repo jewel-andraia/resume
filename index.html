@@ -2,15 +2,18 @@
 <html>
 
 <head>
-  <title>Andy Sacher (they/he) - Senior Full-Stack Software Engineer</title>
+  <meta charset="UTF-8">
+  <title>Andy Sacher (they/he) - Software Engineering Manager</title>
   <base target="_blank">
   <script>
     if (window.console) {
       console.log(" \n\
-    Looking for a senior software engineer for \n\
-      web/mobile development? Drop me a line: \n\
-		\n\
-              andytuba@andytuba.com. \n\
+    Looking for a staff software engineer\n\
+      or software engineering manager\n\
+        for web/mobile app engineering?\n\
+	  \n\
+                 Send me a 📧!\n\
+             andytuba@andytuba.com. \n\
 		");
     }
 
@@ -169,6 +172,7 @@
     }
 
     h2 {
+      display: block;
       margin: 1em 0 .5em;
       border-width: 0 0 1px;
       border-style: double;
@@ -178,20 +182,42 @@
       font-size: 1.7em;
     }
 
-    section>ul>li {
-      page-break-inside: avoid;
+    details:not([open]) > summary .summary-instructions {
+	font-style: oblique;
+	margin-left: 1em;
+	content: attr(title);
     }
 
-    section>ul {
+    details[open] > summary .summary-instructions {
+	display: none;
+    }
+
+    section > details > summary {
+	display: block;
+    }
+
+    section
+    section > ul > li,
+    section > details > ul > li {
+      page-break-inside: avoid;
+    }
+    #more-experience {
+	page-break-before: always;
+    }
+       
+    section ul,
+    section > details > ul > li {
       list-style: none;
     }
 
-    section>ul>li {
+    section > ul > li,
+    section > ul > li {
       margin: 0 0 0 2em;
       line-height: 1.4em;
     }
 
-    section>ul>li+li {
+    section > ul > li + li,
+    section > details > ul > li + li {
       margin-top: 1em;
     }
 
@@ -256,6 +282,10 @@
 
     #about-me p {
       text-align: justify;
+    }
+
+    .print-only {
+	display: none;
     }
 
     .float-list {
@@ -348,8 +378,16 @@
       content: ': 'attr(title);
     }
 
-    .float-list.mini-break {
+    .float-list .break, 
+    .float-list .mini-break {
       clear: left;
+    }
+
+    .print-only {
+	display: block;
+    }
+    .print-hide {
+	display: none;
     }
   </style>
 </head>
@@ -370,18 +408,19 @@
         <a href="mailto:andytuba@andytuba.com">andytuba@andytuba.com</a>
         <br> (267) 888-6172
       </div>
-      <h1>Andy Sacher <small>(they/he)</small></h1>
+      <h1>Andy Sacher <small>(<a href="https://pronoun.is/they?or=he" title="they/them or he/him">they/he)</a></small></h1>
     </div>
   </div>
   <div id="body">
     <section id="me">
-      <h2>Senior Full-Stack Software Engineer</h2>
+      <h2>Software Engineering Manager</h2>
       <p>
-        Andy (they/he) is a talented, versatile software engineering professional with a proven ability to
-        deliver innovative, engaging solutions for end-users and clients. He has an extensive background in
-        front-end and full-stack web development, mobile and desktop apps, and user experience enhancement.
-        Andy's core motivation is to make tech more accessible to novices, power users, and folks who want
-        to make their own tech-powered creations.
+        Andy Tuba <small>(<a href="https://pronoun.is/they?or=he" title="they/them or he/him">they/he)</a></small>
+	is a talented, versatile software engineering professional with a proven ability to
+        deliver helpful and accessible solutions for end-users and clients. They have an extensive background in
+        architecting, implementing, and leading engineering teams to build out mobile and web apps.
+        Andy's core motivation is to make tech safer, healthier, and more accessible to novices, power users, 
+	and folks who want to make neat things happen faster, shinier, and with more emojis. (Elle también habla español.)
       </p>
     </section>
     <section id="experience">
@@ -389,16 +428,23 @@
       <ul>
         <li>
           <h3>
-            <a href="https://www.reddit.com/">Reddit</a>
+            <a href="https://www.redditinc.com/">Reddit</a>
           </h3>
           <div class="location">San Francisco, CA
           </div>
-          <div class="date">2016 - present</div>
+
+          <div class="date">2020 - present</div>
+	  <h4>Software Engineering Manager</h4>
+          <div class="date">2018 - 2019</div>
+	  <h4>Staff Software Engineer</h4>
+          <div class="date">2016 - 2018</div>
+	  <h4>Senior Software Engineer</h4>
+
           <div class="subsection">
-            <h4>Staff Software Engineer</h4>
             <p>Reddit, a community forum platform, is the "frontpage of the internet" where folks find their
               people to discuss news, life, and cat pics.</p>
             <ul class="details">
+	      <li>Founding engineer, tech lead, and now engineering manager of Consumer Safety Engineering. Leading 6 engineers specializing in iOS, Android, web, backend, and full-stack development to make Reddit a happier and healthier place: more dank memes, less shitheadery!</li>
               <li>Founding member of desktop web redesign experimental development team</li>
               <li>Founding member of chat web and API architecture and implementation</li>
               <li>Architected and implemented admin and user tooling to support
@@ -420,26 +466,37 @@
           </h3>
           <div class="location">San Francisco, CA</div>
           <div class="date">2015 - 2016</div>
+	  <h4>Automated QA Engineer</h4>
+	  <h4>Full-Stack Software Engineer</h4>
           <div class="subsection">
-            <h4>Automated QA Engineer, Full-Stack Engineer</h4>
             <p>Imgur, a public community and private image host, surfaces up the most awesome images on the
               internet. Serving 5.5 billion page views and 175 million unique sets of eyeballs monthly,
               Imgur provides massive amounts of cat pics, Twitter screencaps, and worldwide community at
               scale.</p>
-            <p>As a Full-Stack Engineer, Andy maintains the website, API, and infrastructure, adding and
+            <p>As a Full-Stack Software Engineer, Andy maintains the website, API, and infrastructure, adding and
               maintaining functionality to support community, revenue, and data analytics. As a QA
               Automation Engineer, Andy built and maintains the testing framework and test suites for the
               desktop website while providing support for and managing contributions from fellow
               engineers.</p>
             <ul class="details">
               <li>Developed and maintained functionality for imgur.com desktop website, mobile website,
-                API, and backend infrastructure.</li>
+                API, and backend infrastructure</li>
               <li>Developed functionality to support community, email engagement, and data analysis
-                initiatives.</li>
-              <li>Built integration testing for desktop website in Selenium/python.</li>
+                initiatives</li>
+              <li>Built integration testing for desktop website in Selenium/python</li>
             </ul>
           </div>
         </li>
+      </ul>
+    </section>
+    <section id="more-experience">
+      <details>
+       <summary
+       ><h2>More Experience</h2>
+       <span class="summary-instructions print-hide">Click to show more</span>
+       <span class="summary-instructions print-only">Full-time, work-study, internship, and student worker experience from 2004-2015 available at <a href="http://andytuba.com/resume">andytuba.com/resume</a></span>
+       </summary>
+       <ul>
         <li>
           <h3>
             <a href="https://www.gigya.com/">Gigya</a>
@@ -450,8 +507,8 @@
               View, CA</a>
           </div>
           <div class="date">2014 - 2015</div>
+	  <h4>Front-End Web Developer, Creative/Interactive</h4>
           <div class="subsection">
-            <h4>Front-End Web Developer, Creative/Interactive</h4>
             <p>Gigya's Customer Identity Management Platform allows companies to build rich user profiles
               from social media accounts, aiding customer engagement and promoting customer loyalty.</p>
             <p>As the Senior Developer for the Creative/Interactive team, Andy maintained and improved
@@ -462,11 +519,11 @@
             <ul class="details">
               <li>Developed and maintained Gigya's WordPress homepage, including a custom theme and
                 third-party plugins. Streamline and implement content and layout updates to improve
-                customer experience.</li>
+                customer experience</li>
               <li>Selected from existing tools or develop new applications to streamline internal sales
                 and marketing workflows, enhancing Gigya's ability to build and maintain customer and
-                partner relationships.</li>
-              <li>Assisted the sales and marketing departments with special projects as requested.</li>
+                partner relationships</li>
+              <li>Assisted the sales and marketing departments with special projects as requested</li>
             </ul>
           </div>
         </li>
@@ -491,14 +548,14 @@
               web applications using JavaScript API.</p>
             <ul class="details">
               <li>Designed new user interface elements, developed new functionality, and fixed bugs to
-                give end-users the best possible viewing experience.</li>
+                give end-users the best possible viewing experience</li>
               <li>Provided continuous platform support to maintain usability across all supported devices
-                and browsers.</li>
+                and browsers</li>
               <li>Developed a JavaScript API to enable customers to customize the player's look and feel,
                 and integrate it into other web applications, such as online education portals, blogs,
-                and other Mediasite applications.</li>
+                and other Mediasite applications</li>
               <li>Developed a native iOS app to enable iPhone video playback support and improve user
-                engagement.</li>
+                engagement</li>
             </ul>
           </div>
         </li>
@@ -519,15 +576,15 @@
               functionality for RES settings and features, core infrastructure, Bitcoin Tip functionality,
               and smaller improvements to improve overall usability.</p>
             <ul class="details">
-              <li>Take a leadership role in review and implementation of JavaScript and CSS code.</li>
+              <li>Take a leadership role in review and implementation of JavaScript and CSS code</li>
               <li>Fix bugs and update code to maintain browser compatibility and support changes to
-                reddit.com and external sites like imgur.com.</li>
+                reddit.com and external sites like imgur.com</li>
               <li>Provide direct end-user support to maintain and expand a devoted, enthusiastic user
-                base.</li>
+                base</li>
               <li>Manage change log and release notices to maintain a streamlined project infrastructure.
               </li>
               <li>Integrate new features including the ability to search for RES settings and features,
-                Bitcoin Tip functionality, and minor improvements to the browser extension overall.</li>
+                Bitcoin Tip functionality, and minor improvements to the browser extension overall</li>
             </ul>
           </div>
         </li>
@@ -548,11 +605,11 @@
             <ul class="details">
               <li>Assist in designing and building the overall product and new features. Use JavaScript,
                 CSS, SASS/Compass, Python, and Django to develop all front-end website functionality to
-                promote an excellent user experience.</li>
-              <li>Integrate third-party functionality to maintain seamless accessibility.</li>
-              <li>Develop tools for and provide leadership and mentorship to junior developers.</li>
+                promote an excellent user experience</li>
+              <li>Integrate third-party functionality to maintain seamless accessibility</li>
+              <li>Develop tools for and provide leadership and mentorship to junior developers</li>
               <li>Implement important new functionality, including an image lightbox viewer, Stripe
-                checkout integration, customization widgets, and an iPhoto export plugin.</li>
+                checkout integration, customization widgets, and an iPhoto export plugin</li>
             </ul>
           </div>
         </li>
@@ -577,12 +634,12 @@
             <ul class="details">
               <li>Developed and implemented new technology for a variety of essential internal tools,
                 including a corporate intranet site, an employee and customer directory, site maps, and
-                HR forms.</li>
+                HR forms</li>
               <li>Maintained rich search functionality, pulling from data sources including T-SQL and
                 Cach&eacute; databases to provide complete and accurate information for internal use.
               </li>
               <li>Collaborated with graphic designer to create and implement themes to improve user
-                engagement.</li>
+                engagement</li>
             </ul>
           </div>
           </ki>
@@ -605,9 +662,9 @@
             </p>
             <ul class="details">
               <li>Collaborated with graphic design team to convert graphic design mockups into
-                fully-functional website templates for business use.</li>
+                fully-functional website templates for business use</li>
               <li>Supported and maintained websites for corporate clients after implementation to ensure
-                client and end-user satisfaction.</li>
+                client and end-user satisfaction</li>
             </ul>
           </div>
         </li>
@@ -627,11 +684,11 @@
               customer engagement and promote repeat business.</p>
             <ul class="details">
               <li>Maintained the company's website and online store, driving customer engagement and
-                promoting repeat business. Entered customer data and maintained company databases.</li>
+                promoting repeat business. Entered customer data and maintained company databases</li>
               <li>Packaged and sent books and artwork to businesses and individuals located worldwide.
               </li>
               <li>Managed warehouse and shipping supply inventory and provided customer support via
-                telephone, email, and storefront websites.</li>
+                telephone, email, and storefront websites</li>
             </ul>
           </div>
         </li>
@@ -661,17 +718,18 @@
             </ul>
           </div>
         </li>
-      </ul>
+       </ul>
+      </details>
     </section>
     <section id="expertise">
       <h2>Preferred Technologies</h2>
       <ul class="float-list">
         <li>
-          <abbr title="ES5, ES6, modern JavaScript">JavaScript</abbr>
+          <abbr title="ES5, ES6">JavaScript</abbr>
         </li>
         <li>HTML</li>
         <li>
-          <abbr title="LESS, SASS, SCSS, CSS-in-JS">CSS</abbr>
+          <abbr title="LESS, SCSS, CSS-in-JS">CSS</abbr>
         </li>
         <li class="mini-break">
           <abbr title="py2.7, py3">python</abbr>
@@ -680,8 +738,6 @@
           <abbr title="php5, php7">php</abbr>
         </li>
         <li>C#</li>
-        <li>Objective-C</li>
-        <li>Java</li>
 
         <li class="break mini-break">TypeScript</li>
         <li>React</li>
@@ -692,18 +748,15 @@
 
         <li class="break mini-break">Postgres</li>
         <li>MySQL</li>
-        <li>NoSQL</li>
         <li>T-SQL</li>
 
         <li class="mini-break">npm</li>
         <li>yarn</li>
         <li>gulp</li>
 
-        <li class="break mini-break">Git / GitHub</li>
-        <li>perforce</li>
-        <li>svn</li>
-        <li class="mini-break">OS X, Linux, Windows</li>
-        <li>A/V Technology</li>
+        <li class="break mini-break">GitHub</li>
+        <li>JIRA</li>
+        <li>Asana</li>
       </ul>
     </section>
     <section id="education">
@@ -718,8 +771,9 @@
             <ul class="details">
               <li>Majors: Computer Science, Theatre Production</li>
               <li>Minor: Spanish Studies</li>
-              <li>GPA: 3.314 / 4.000</li>
+	      <li>Performing member of Fightin' Blue Hen Marching Band, Schola Cantorum chorus, steel pan ensemble</li>
               <li class="spacer">Study abroad programs in Spain, Chile, Peru, China, and London</li>
+              <li class="spacer">Work experience in technical theater, A/V support, and software development</li>
             </ul>
           </div>
         </li>
